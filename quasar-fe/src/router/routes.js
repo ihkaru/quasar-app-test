@@ -4,7 +4,15 @@ const routes = [
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/IndexPage.vue') }
+      { 
+        path: '/route', 
+        component: () => import('pages/RoutePage.vue'),
+        children: [
+          { path: '', component: () => import('pages/route/RouteSelect.vue') },
+        ] 
+      },
+      { path: '/map', component: () => import('pages/route/AddRoute.vue') },
+      { path: '/auth', component: () => import('pages/AuthPage.vue') },
     ]
   },
 
